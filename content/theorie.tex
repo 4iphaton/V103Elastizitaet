@@ -16,30 +16,56 @@ Hooksches Gesetz genannt.
 
 \begin{equation}
   \sigma = \symup{E}\frac{\increment L}{L}
+  \label{eqn:hook}
 \end{equation}
 
 Wie bereits erwähnt soll eben dieser Elastizitätsmodul durch die
-Durchbiegung $D(x)$ eines schmalen Metallstabes, welcher an
+Durchbiegung $D(x)$ eines schmalen Metallstabes der Länge L, welcher an
 einem Ende eingespannt und am anderen mit einem Gewicht versehen
 beziehungsweise an beiden Seiten eingespannt und in der Mitte
 mit einem Gewicht versehen ist, berechnet werden.
 $füge Abb ein$
 Es ist wichtig zu beachten, dass die relative Längenänderung im Querschnitt
 Q im Falle einer Biegung nicht konstant ist. Die Durchbiegung ist nun also
-vom Ort abhängig. In der Mitte des Stabes befindet sich eine Fläche an welcher
+vom Ort abhängig.
+
+\begin{equation}
+  D \to D(x)
+\end{equation}
+In der Mitte des Stabes befindet sich eine Fläche an welcher
 keine Spannung Auftritt, die sogenannte neutrale Faser. Überhalb dieser
 bildet sich eine Zugspannung (Streckung des Materials), untehalb eine Druckspannung
 (Stauchung des Materials), welche zusammen durch Intergration über Q ein inneres Drehmoment $M_\sigma$ bilden.
 Dieses muss mit dem äußeren Drehmoment $M_\symup{F}$ ins Gleichgewicht kommen.
-
 \begin{align}
-  D &\to D(x)\\
   M_\sigma &= \int_\symup{Q} y \sigma(y) \symup{d} \, q\\
   M_\symup{F} &= F(L-x)\\
   F(L-x) &= \int_\symup{Q} y \sigma(y) \symup{d} \, q
+  \label{eqn:dreh}
 \end{align}
+Durch die infnitesimale Betrachtung von \eqref{eqn:hook} und \eqref{eqn:dreh} ergibt
+sich für die Durchbiegung $D(x)$ des einseitig eingespannten Stabes:
+\begin{align}
+  D(x) &= \frac{F}{2E\symbf{I}}\left(Lx^2-\frac{x^3}{3}\right)\\
+  \intertext{mit dem Flächenträgheitsmoment $\symbf{I}$}
+\symbf{I} &\coloneq \int_\symup{Q} y^2 \symup{d}\, q(y)\\
+\iff E &= \frac{F}{2\symbf{I}D(x)}\left(Lx^2-\frac{x^3}{3}\right)
+\label{eqn:einseitig}
+\end{align}
+Für den beidseitig eingespannten Stab ergibt sich
+\begin{align}
+  M_\symup{F} &= -\frac{F}{2}x & 0 \leq &x \leq \frac{L}{2}\\
+  M_\symup{F} &= -\frac{F}{2}\left(L-x\right) & \frac{L}{2} \leq &x \leq L\\
+\end{align}
+Zieht man erneut \eqref{eqn:hook} in seiner infinitesimalen Form zur Hilfe
+ergibt sich:
 
-
-
-
-\cite{litval}
+\begin{align}
+  D(x) &= \frac{F}{48E\symbf{I}}\left(3L^2x-4x^3\right)& 0 \leq &x \leq \frac{L}{2}\\
+  D(x) &= \frac{F}{48E\symbf{I}}\left(4x^3-12Lx^2+9L^2x-L^3\right) & \frac{L}{2} \leq &x \leq L\\
+  \intertext{forme um wie in \eqref{eqn:einseitig}}
+  E &= \frac{F}{48\symbf{I}D(x)}\left(3L^2x-4x^3\right)& 0 \leq &x \leq \frac{L}{2}
+  \label{eqn:beidseitigl}\\
+  E &= \frac{F}{48\symbf{I}D(x)}\left(4x^3-12Lx^2+9L^2x-L^3\right) & \frac{L}{2} \leq &x \leq L
+  \label{eqn:beidseitigr}
+\end{align}
