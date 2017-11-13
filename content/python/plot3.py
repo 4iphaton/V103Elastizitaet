@@ -25,7 +25,7 @@ errors = np.sqrt(np.diag(pcov))
 print(parameters[0], errors[0])
 m = ufloat(parameters[0], errors[0])
 print('Steigung m = {0:.8f}'.format(m),'1/(m^2)')
-t= np.linspace(E[0],E[len(E)-1],5000)
+t= np.linspace(0,E[len(E)-1],5000)
 
 plt.plot(t, f(t, *parameters), 'g-', label='Fit')
 plt.plot(E, b, 'rx', label='ohne Gewicht')
