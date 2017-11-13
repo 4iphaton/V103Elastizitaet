@@ -29,12 +29,40 @@ zeigt sich, dass beide Stäbe aus Messing bestehen.
 
 
 \subsection{Eckiger Stab, einseitige Einspannung}
+
+Über die Differenz der Auslenkung  ergibt sich nach
+$D(x) = D_0 - D_m$. Die Einspannlänge beträgt $L_1 = 0.493m$ und
+das verwendete Gewicht $m_1 = 1.1932 kg$.
+
+\begin{table}[h]
+  \centering
+  \label{tab:lit}
+  \begin{tabular}{ c c c }
+    \toprule
+    $x \,\, \text{in} \, [mm]$
+   &{$D(x) \,\, \text{in} \, [mm]$}
+   &{$(Lx^2- \frac{x^3}{3}) \,\, \text{in} \, [mm^3]$}
+
+    \midrule
+     & \\
+    \bottomrule
+  \end{tabular}
+  \caption{Dichte der Metalle}
+\end{table}
+
+Mit Hilfe von Python wurde eine Regressiongerade berechnet (Abb.2). Hierbei
+wird $(Lx^2- \frac{x^3}{3})$ auf der x-Achse gegen $D(x)$ auf der y-Achse gesetzt.
+ 
+
 \begin{figure}
   \centering
   \includegraphics{build/plot1.pdf}
-  \caption{Auslenkung und Fit, eckiger Stab}
+  \caption{Eckiger Stab, einseitige Einspannung}
   \label{fig:plot1}
 \end{figure}
+
+
+
 
 \subsection{Runder Stab, einseitige Einspannung}
 \begin{figure}
