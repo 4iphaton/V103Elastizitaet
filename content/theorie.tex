@@ -74,3 +74,25 @@ ergibt sich:
   E &= \frac{F}{48\symbf{I}D(x)}\left(4x^3-12Lx^2+9L^2x-L^3\right) & \frac{L}{2} \leq &x \leq L
   \label{eqn:beidseitigr}
 \end{align}
+
+\subsection{Fehlerrechnung}
+
+Die Mittelwerte werden durch
+\begin{equation}
+  \overline{x} =\frac{1}{N}\sum_{i=1}^{N} x_i
+  \label{eqn:mean}
+\end{equation}
+bestimmt.
+
+Die Standardabweichung wird durch
+\begin{equation}
+  \sigma = \sqrt{\left(\frac{1}{N}\sum_{i=1}^{N}(x_i-\overline{x})^2\right)}
+  \label{eqn:std}
+\end{equation}
+ errechnet.
+ Zudem ergibt sich die Fehlerfortpflanzung aus
+ \begin{equation}
+   \increment y = \sqrt{\sum_{i=1}^{n}\left(\frac{\partial y}{\partial x_i}
+   \increment x_i\right)^2}
+   \label{eqn:gauss}.
+\end{equation}
