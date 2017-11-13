@@ -3,12 +3,12 @@ from scipy.optimize import curve_fit
 from scipy.signal import find_peaks_cwt
 import matplotlib.pyplot as plt
 
-k, b, c = np.genfromtxt('../../content/values/Messwerte_2.txt', unpack=True)
+k, b, c = np.genfromtxt('content/values/Messwerte_2.txt', unpack=True)
 # = np.genfromtxt('../../content/values/Differenz_2.txt', unpack=True)
 d= b+c
 
 F=9.81*1190.7
-E_1=(49*0.01*(a*0.01)**2-(a*0.01)**3/3)*10**(-6)
+E_1=(49*0.01*(b*0.01)**2-(b*0.01)**3/3)*10**(-6)
 #print(E_1)
 
 s_1=np.mean(E_1)
@@ -16,7 +16,7 @@ s_1=np.mean(E_1)
 print(s_1)
 
 L=49
-E=L*a**2-a**3/3
+E=L*b**2-b**3/3
 
 def f(x, y, b):
     return x*b+y
@@ -34,4 +34,4 @@ plt.plot(E, d, 'gx', label='$ D(x) $')
 plt.xlabel(r'$ Lx^2 - \frac{x^3}{3}$')
 plt.ylabel(r'Auslenkung in $ 10 \mu m$')
 plt.legend(loc='best')
-plt.savefig('plot1.pdf')
+plt.savefig('build/plot1.pdf')
