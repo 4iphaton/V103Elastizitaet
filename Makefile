@@ -16,7 +16,7 @@ build/plot1.pdf: content/python/plot1.py matplotlibrc header-matplotlib.tex | bu
 build/plot2.pdf: content/python/plot2.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python content/python/plot2.py
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot1.pdf build/plot2.pdf
+build/main.pdf: build/plot20.pdf build/plot2.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
