@@ -4,7 +4,7 @@
 
 
 \subsection{Bestimmung der Metalle über die Dichte}
-Die Metalle lassen sich über ihr Volumen V und ihre Masse m bestimmen (Abb.1).
+Die Metalle lassen sich über ihr Volumen V und ihre Masse m bestimmen(Tab.1).
 Im Vergleich zu dem Literaturwert von Messing mit $8.41\, \frac{g}{cm^3}$\cite{litval}
 zeigt sich, dass beide Stäbe aus Messing bestehen.
 \begin{table}[h]
@@ -21,7 +21,7 @@ zeigt sich, dass beide Stäbe aus Messing bestehen.
    &{$\rho \,\, \text{in} \, [\frac{g}{cm^3}]$} \\
     \midrule
      {$\text{eckig}$}&60&1&60&502.4 & 8.367 \\
-     {$\text{rund}$}&60.05&1&15\pi&394.4 & 8.361 \\
+     {$\text{rund}$}&60.05&1&15$\pi$&394.4 & 8.361 \\
     \bottomrule
   \end{tabular}
   \caption{Dichte der Metalle}
@@ -36,25 +36,22 @@ das verwendete Gewicht $m_1 = 1.1932 kg$.
 
 \begin{table}[h]
   \centering
-  \label{tab:lit}
+  \label{tab:lit2}
   \begin{tabular}{ c c c }
     \toprule
     $x \,\, \text{in} \, [mm]$
    &{$D(x) \,\, \text{in} \, [mm]$}
-   &{$(Lx^2- \frac{x^3}{3}) \,\, \text{in} \, [mm^3]$}
+   &{$(Lx^2- \frac{x^3}{3}) \,\, \text{in} \, [mm^3]$} \\
 
     \midrule
-     & \\
+     0 & 0 & 0 \\
+     0 & 0 & 0 \\
     \bottomrule
   \end{tabular}
   \caption{Dichte der Metalle}
 \end{table}
 
-Mit Hilfe von Python wurde eine Regressiongerade berechnet (Abb.2). Hierbei
-wird $(Lx^2- \frac{x^3}{3})$ auf der x-Achse gegen $D(x)$ auf der y-Achse gesetzt.
- 
-
-\begin{figure}
+\begin{figure}[h]
   \centering
   \includegraphics{build/plot1.pdf}
   \caption{Eckiger Stab, einseitige Einspannung}
@@ -63,9 +60,34 @@ wird $(Lx^2- \frac{x^3}{3})$ auf der x-Achse gegen $D(x)$ auf der y-Achse gesetz
 
 
 
+Mit Hilfe von Python wurde eine Regressiongerade berechnet (Abb.3).
+Hierbei wird $(Lx^2- \frac{x^3}{3})$ auf der x-Achse gegen $D(x)$ auf der y-Achse
+gesetzt, woraus sich die Werte
+\begin{align*}
+  a &= \SI{8.15(104)e-5}{\per\square\meter} \\
+  b &= \SI{7.8205(257)e-2}{\meter} \\
+\end{align*}
+für die Regressionsgerade ergeben.
+\newline
+Das vorliegende Trägheitsmoment ist
+\begin{equation*}
+  I = 1.667* 10^{-9}\, m^4.
+\end{equation*}
+
+Hiermit wird der Elastizitätsmodul nach \ref{eqn:einseitig} bestimmt.
+
+\begin{equation*}
+  E = \SI{1.20(15)e+5}{\newton\per\square\meter}
+\end{equation*}
+
+
+
+
+
 
 \subsection{Runder Stab, einseitige Einspannung}
-\begin{figure}
+Die Einspannlänge beträgt 
+\begin{figure}[h]
   \centering
   \includegraphics{build/plot2.pdf}
   \caption{Plot2.}

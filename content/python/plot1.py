@@ -24,8 +24,8 @@ def f(x, y, b):
     return x*b+y
 
 parameters, pcov = curve_fit(f, x_ap, y_ap)
-print("a", parameters)
-print("b", np.sqrt(np.diag(pcov)), sep='\n')
+print("a1", parameters)
+print("b2", np.sqrt(np.diag(pcov)), sep='\n')
 t= np.linspace(0,0.08,1000)
 
 
@@ -41,7 +41,7 @@ plt.savefig('build/plot1.pdf')
 #eckig
 
 I= ((b_e*h_e)/12)*(b_e**2 + h_e**2)
-print(I)
+print("Traegheitsmoment1:",I)
 g= 9.81
 F = m_e*g
 fehl = np.sqrt(np.diag(pcov))
@@ -49,5 +49,5 @@ m = ufloat(parameters[0], fehl[0])
 print(m)
 print(F)
 E_1= F*m/(2*I)
-print(E_1)
+print("Elastizitaetsmodul1", E_1)
 print("-------------------------------")

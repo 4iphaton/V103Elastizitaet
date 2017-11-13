@@ -25,7 +25,8 @@ def f(x, y, b):
 
 parameters, pcov = curve_fit(f, E, d)
 errors = np.sqrt(np.diag(pcov))
-print(parameters[0], errors[0])
+print( "a2:", parameters[0], errors[0])
+print( "b2:", parameters[1], errors[1])
 m = ufloat(parameters[0], errors[0])
 print('Steigung m = {0:.8f}'.format(m),'1/(m^2)')
 
@@ -45,8 +46,8 @@ plt.tight_layout()
 plt.savefig('build/plot2.pdf')
 
 I = const.pi * (0.005**4) / 2
-print(I)
+print("Traegheitsmoment2:", I)
 EM = F*m/(2*I)
 
-print("Elastizitätmodul: {0:.2f}".format(EM), "N/m^2")
+print("Elastizitätmodul3: {0:.2f}".format(EM), "N/m^2")
 print("-------------------------------")
