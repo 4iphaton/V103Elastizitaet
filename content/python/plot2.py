@@ -32,4 +32,7 @@ plt.plot(E, d, 'gx', label='$ D(x) $')
 plt.xlabel(r'$ Lx^2 - \frac{x^3}{3}$')
 plt.ylabel(r'Auslenkung in $ 10 \mu m$')
 plt.legend(loc='best')
+
+plt.tight_layout()
+
 plt.savefig('build/plot2.pdf')
