@@ -48,3 +48,4 @@ print(I)
 EM = F*m/(2*I)
 
 print("Elastizitätmodul: {0:.2f}".format(EM), "N/m^2")
+print("-------------------------------")

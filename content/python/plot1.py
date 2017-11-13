@@ -2,37 +2,52 @@ import numpy as np
 from scipy.optimize import curve_fit
 from scipy.signal import find_peaks_cwt
 import matplotlib.pyplot as plt
+from uncertainties import ufloat
 
 a, b, c = np.genfromtxt('content/values/Messwerte_2.txt', unpack=True)
+l_e, b_e, h_e, m_e =np.genfromtxt('content/values/stab_eckig_einseitig.txt', unpack=True)
 # = np.genfromtxt('../../content/values/Differenz_2.txt', unpack=True)
-a= a*0.1
-d= b-c
+a= a*10**(-2) #m
+b = b*10**(-3)
+c = c*10**(-3)
+d= b-c  #m
+L= 49.3*10**(-2) #m
+l_e = l_e* 10**(-2)
+b_e = b_e* 10**(-2)
+h_e = h_e* 10**(-2)
+m_e = m_e* 10**(-3)
 
-F=9.81*1193.2
-E_1=(49*0.01*(b*0.01)**2-(b*0.01)**3/3)*10**(-6)
-#print(E_1)
-
-s_1=np.mean(E_1)
-#m_1=np.std(E_1)
-print(s_1)
-
-L=49
-E=L*b**2-b**3/3
+x_ap= L*a**2 - a**3/3 #m
+y_ap= d               #m
 
 def f(x, y, b):
     return x*b+y
-   # return x*b**2-b**3*y
 
-parameters, pcov = curve_fit(f, E, d)
-print(parameters, np.sqrt(np.diag(pcov)), sep='\n')
-t= np.linspace(0,80000,1000)
+parameters, pcov = curve_fit(f, x_ap, y_ap)
+print("a", parameters)
+print("b", np.sqrt(np.diag(pcov)), sep='\n')
+t= np.linspace(0,0.08,1000)
+
 
 plt.plot(t, f(t, *parameters), 'g-', label='Fit')
-plt.plot(E, b, 'rx', label='Biegung ohne Gewicht')
-plt.plot(E, c, 'bx', label='Biegung mit Gewicht')
-plt.plot(E, d, 'gx', label='$ D(x) $')
+plt.plot(x_ap, b, 'rx', label='Biegung ohne Gewicht')
+plt.plot(x_ap, c, 'bx', label='Biegung mit Gewicht')
+plt.plot(x_ap, y_ap, 'gx', label='$ D(x) $')
 #plt.errorbar(i, v ,xerr=2*e_i ,yerr=2*e_v, fmt='rx', label='U gegen I')
-plt.xlabel(r'$ Lx^2 - \frac{x^3}{3}$')
-plt.ylabel(r'Auslenkung in $ 10 \mu m$')
+plt.xlabel(r'$ Lx^2 - \frac{x^3}{3} \ / \ \text{m}^3$')
 plt.legend(loc='best')
+plt.tight_layout()
 plt.savefig('build/plot1.pdf')
+#eckig
+
+I= ((b_e*h_e)/12)*(b_e**2 + h_e**2)
+print(I)
+g= 9.81
+F = m_e*g
+fehl = np.sqrt(np.diag(pcov))
+m = ufloat(parameters[0], fehl[0])
+print(m)
+print(F)
+E_1= F*m/(2*I)
+print(E_1)
+print("-------------------------------")
