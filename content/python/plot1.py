@@ -30,8 +30,8 @@ t= np.linspace(0,0.08,1000)
 
 
 plt.plot(t, f(t, *parameters), 'g-', label='Fit')
-plt.plot(x_ap, b, 'rx', label='Biegung ohne Gewicht')
-plt.plot(x_ap, c, 'bx', label='Biegung mit Gewicht')
+plt.plot(x_ap, b, 'rx', label='ohne Gewicht')
+plt.plot(x_ap, c, 'bx', label='mit Gewicht')
 plt.plot(x_ap, y_ap, 'gx', label='$ D(x) $')
 #plt.errorbar(i, v ,xerr=2*e_i ,yerr=2*e_v, fmt='rx', label='U gegen I')
 plt.xlabel(r'$ Lx^2 - \frac{x^3}{3} \ / \ \text{m}^3$')
