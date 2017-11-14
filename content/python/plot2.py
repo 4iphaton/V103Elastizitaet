@@ -19,7 +19,8 @@ L=0.508
 E=L*a**2-a**3/3
 print(a[0],a[len(a)-1])
 print(E[0],E[len(E)-1])
-def f(x, y, b):
+
+def f(x, b, y):
     return x*b+y
    # return x*b**2-b**3*y
 

@@ -20,7 +20,7 @@ m_e = m_e* 10**(-3)
 x_ap= L*a**2 - a**3/3 #m
 y_ap= d               #m
 
-def f(x, y, b):
+def f(x, b, y):
     return x*b+y
 
 parameters, pcov = curve_fit(f, x_ap, y_ap)
