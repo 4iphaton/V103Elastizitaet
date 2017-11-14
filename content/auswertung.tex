@@ -1,3 +1,4 @@
+\newpage
 \section{Auswertung}
 \label{sec:Auswertung}
 
@@ -9,7 +10,7 @@ Im Vergleich zu dem Literaturwert von Messing mit $8.41\, \frac{g}{cm^3}$\cite{l
 zeigt sich, dass beide Stäbe aus Messing bestehen.
 \begin{table}[h]
   \centering
-  \label{tab:lit}
+  \label{tab:2}
   \begin{tabular}{ c c c c c c }
     \toprule
     {$\text{Stab}$}
@@ -30,13 +31,9 @@ zeigt sich, dass beide Stäbe aus Messing bestehen.
 
 \subsection{Eckiger Stab, einseitige Einspannung}
 
-Über die Differenz der Auslenkung  ergibt sich nach
-$D(x) = D_0 - D_m$. Die Einspannlänge beträgt $L_1 = 0.493m$ und
-das verwendete Gewicht $m_1 = 1.1932 kg$.
-
 \begin{table}[h]
   \centering
-  \label{tab:lit2}
+  \label{tab:3}
   \begin{tabular}{ c c c }
     \toprule
     $x \,\, \text{in} \, [mm]$
@@ -80,6 +77,12 @@ das verwendete Gewicht $m_1 = 1.1932 kg$.
   \label{fig:plot1}
 \end{figure}
 
+Über die Differenz der Auslenkung  ergibt sich nach
+$D(x) = D_0 - D_m$(Tab.2). Die Einspannlänge beträgt $L_1 = 0.493m$ und
+das verwendete Gewicht wiegt $m_1 = 1.1932 kg$.
+
+
+
 
 
 Mit Hilfe von Python wurde eine Regressiongerade berechnet (Abb.3).
@@ -101,6 +104,7 @@ Hiermit wird der Elastizitätsmodul nach \ref{eqn:einseitig} bestimmt.
 \begin{equation*}
   E = \SI{120000(15000)}{\newton\per\square\meter}
 \end{equation*}
+\newpage
 
 
 
@@ -108,8 +112,9 @@ Hiermit wird der Elastizitätsmodul nach \ref{eqn:einseitig} bestimmt.
 
 
 \subsection{Runder Stab, einseitige Einspannung}
-Die Einspannlänge beträgt nun $L_2 = 0.508m$ und es wird ein Gewicht
-mit $m_2 = 0.5339 kg $ verwendet.
+Die Einspannlänge beträgt nun $L_2 = 0.508m$, es wird ein Gewicht
+mit $m_2 = 0.5339 kg $ verwendet und die Aulenkungen $D(x)$ finden
+sich in Tabelle.4.
 
 \begin{table}[h]
   \centering
@@ -158,7 +163,7 @@ mit $m_2 = 0.5339 kg $ verwendet.
   \label{fig:plot2}
 \end{figure}
 
-Die erneute Berechnung des Regressionsgeraden über Python
+Die erneute Berechnung des Regressionsgeraden(Abb.4) über Python
 für die vorliegenden Werte ergibt
 \begin{align*}
   a &= \SI{5.64(176)e-5}{\per\square\meter} \\
@@ -174,11 +179,58 @@ Wodurch sich für den Elastizitätsmodul
   E = \SI{150571.10(4695784)}{\newton\per\square\meter}
 \end{equation*}
 ergibt.
-
+\newpage
 \subsection{Runder Stab, beidseitige Einspannung}
+Aufgrund des unterschiedlichen Biegeverhaltens wird nun $(3L^2x-4x^3)$
+au der x-Achse verwendet. Die Einspannlänge beträgt $L_3 = 0.565m$
+und es wird ein Gewicht mit $m_3 = 4.6937 kg$ genutzt.
+
+\begin{table}[h]
+  \centering
+  \label{tab:lit3}
+  \begin{tabular}{ c c c }
+    \toprule
+    $x \,\, \text{in} \, [mm]$
+   &{$D(x) \,\, \text{in} \, [mm]$}
+   &{$(3L^2x-4x^3)\,\, \text{in} \, [10^{-3}m^3]$} \\
+
+    \midrule
+    30  & 0.110 & 28.62\\
+    50  & 0.155 & 47.38\\
+    70  & 0.270 & 65.67\\
+    90  & 0.410 & 83.27\\
+    110 & 0.540 & 100.02\\
+    130 & 0.730 & 115.71\\
+    150 & 0.920 & 130.15\\
+    170 & 1.105 & 143.15\\
+    190 & 1.255 & 154.52\\
+    210 & 1.425 & 164.06\\
+    230 & 1.535 & 171.59\\
+    250 & 1.645 & 176.91\\
+    270 & 1.745 & 179.84\\
+
+    \bottomrule
+  \end{tabular}
+  \caption{Auslenkung runder Stab.}
+\end{table}
+
 \begin{figure}
   \centering
   \includegraphics{build/plot3.pdf}
-  \caption{Plot3.}
+  \caption{Runder Stab, beidseitige Einspannung.}
   \label{fig:plot3}
 \end{figure}
+Für die Regressionsgerade(Abb.5) ergeben sich:
+\begin{align*}
+  a &= \SI{-4.28(87)e-4}{\per\square\meter} \\
+  b &= \SI{1.1156(67)e-2}{\meter} \\
+\end{align*}
+Zusammen mit dem Flächenträgheitsmoment
+\begin{equation*}
+  I = 9.818*10^{-10}\, m^4.
+\end{equation*}
+ergibt sich für den Elastizitätsmodul
+\begin{equation*}
+  E = \SI{-418556.76(8520413)}{\newton\per\square\meter} .
+\end{equation*}
+\newpage
