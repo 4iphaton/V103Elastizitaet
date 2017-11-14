@@ -17,7 +17,7 @@ L=0.565
 E=3*(L**2)*a-4*(a**3)
 print(a[0],a[len(a)-1])
 print(E[0],E[len(E)-1])
-def f(x, y, b):
+def f(x, b, y):
     return x*b+y
 
 parameters, pcov = curve_fit(f, E, d)
@@ -42,7 +42,7 @@ plt.tight_layout()
 plt.savefig('build/plot3.pdf')
 I = const.pi * (0.005**4) / 2
 print("Traegheitsmoment 3:", I)
-EM = F*m/(48*I)
+EM = F/(48*I*m)
 
 print("Elastizitätmodul 3: {0:.2f}".format(EM), "N/m^2")
 print("-------------------------------")
