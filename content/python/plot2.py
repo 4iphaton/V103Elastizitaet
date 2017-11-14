@@ -48,7 +48,7 @@ plt.savefig('build/plot2.pdf')
 
 I = const.pi * (0.005**4) / 2
 print("Traegheitsmoment2:", I)
-EM = F*m/(2*I)
+EM = F/(2*I*m)
 
 print("Elastizitätmodul3: {0:.2f}".format(EM), "N/m^2")
 print("-------------------------------")
