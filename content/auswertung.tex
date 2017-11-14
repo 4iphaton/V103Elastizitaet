@@ -41,14 +41,36 @@ das verwendete Gewicht $m_1 = 1.1932 kg$.
     \toprule
     $x \,\, \text{in} \, [mm]$
    &{$D(x) \,\, \text{in} \, [mm]$}
-   &{$(Lx^2- \frac{x^3}{3}) \,\, \text{in} \, [mm^3]$} \\
+   &{$(Lx^2- \frac{x^3}{3}) \,\, \text{in} \, [10^{-3}m^3]$} \\
 
     \midrule
-     0 & 0 & 0 \\
-     0 & 0 & 0 \\
+    30  & 0.065& 0.43\\
+    50  & 0.135& 1.19\\
+    70  & 0.225& 2.30\\
+    90  & 0.390& 3.75\\
+    110 & 0.530& 5.52\\
+    130 & 0.670& 7.60\\
+    150 & 0.875& 9.97\\
+    170 & 1.085&12.61\\
+    190 & 1.320&15.55\\
+    210 & 1.560&18.65\\
+    230 & 1.810&22.02\\
+    250 & 2.105&25.60\\
+    270 & 2.390&29.38\\
+    290 & 2.675&33.33\\
+    310 & 2.990&37.45\\
+    330 & 3.340&41.17\\
+    350 & 3.735&46.10\\
+    370 & 4.038&50.61\\
+    390 & 4.480&55.21\\
+    410 & 4.740&59.90\\
+    430 & 5.145&64.65\\
+    450 & 5.470&69.46\\
+    470 & 5.860&74.30\\
+    480 & 6.070&76.72\\
     \bottomrule
   \end{tabular}
-  \caption{Dichte der Metalle}
+  \caption{Auslenkung eckiger Stab}
 \end{table}
 
 \begin{figure}[h]
@@ -69,7 +91,7 @@ gesetzt, woraus sich die Werte
 \end{align*}
 für die Regressionsgerade ergeben.
 \newline
-Das vorliegende Trägheitsmoment ist
+Das vorliegende Flächenträgheitsmoment ist
 \begin{equation*}
   I = 1.667* 10^{-9}\, m^4.
 \end{equation*}
@@ -77,7 +99,7 @@ Das vorliegende Trägheitsmoment ist
 Hiermit wird der Elastizitätsmodul nach \ref{eqn:einseitig} bestimmt.
 
 \begin{equation*}
-  E = \SI{1.20(15)e+5}{\newton\per\square\meter}
+  E = \SI{120000(15000)}{\newton\per\square\meter}
 \end{equation*}
 
 
@@ -86,13 +108,72 @@ Hiermit wird der Elastizitätsmodul nach \ref{eqn:einseitig} bestimmt.
 
 
 \subsection{Runder Stab, einseitige Einspannung}
-Die Einspannlänge beträgt 
+Die Einspannlänge beträgt nun $L_2 = 0.508m$ und es wird ein Gewicht
+mit $m_2 = 0.5339 kg $ verwendet.
+
+\begin{table}[h]
+  \centering
+  \label{tab:lit3}
+  \begin{tabular}{ c c c }
+    \toprule
+    $x \,\, \text{in} \, [mm]$
+   &{$D(x) \,\, \text{in} \, [mm]$}
+   &{$(Lx^2- \frac{x^3}{3}) \,\, \text{in} \, [10^{-3}m^3]$} \\
+
+    \midrule
+    30 & 0.030 & 0.45\\
+    50 & 0.110 & 1.23\\
+    70 & 0.175 & 2.38\\
+    90 & 0.255 & 3.87\\
+    110& 0.400 & 5.70\\
+    130& 0.540 & 7.85\\
+    150& 0.700 &10.31\\
+    170& 0.870 &13.04\\
+    190& 1.070 &16.05\\
+    210& 1.285 &19.32\\
+    230& 1.495 &22.82\\
+    250& 1.715 &\\
+    270& 1.970 &\\
+    290& 2.280 &\\
+    310& 2.525 &\\
+    330& 2.815 &\\
+    350& 3.030 &\\
+    370& 3.305 &\\
+    390& 3.730 &\\
+    410& 4.050 &\\
+    430& 4.165 &\\
+    450& 4.560 &\\
+    470& 4.900 &\\
+    490& 5.090 &\\
+
+    \bottomrule
+  \end{tabular}
+  \caption{Auslenkung runder Stab.}
+\end{table}
+
 \begin{figure}[h]
   \centering
   \includegraphics{build/plot2.pdf}
-  \caption{Plot2.}
+  \caption{Runder Stab, einseitige Einspannung.}
   \label{fig:plot2}
 \end{figure}
+
+Die erneute Berechnung des Regressionsgeraden über Python
+für die vorliegenden Werte ergibt
+\begin{align*}
+  a &= \SI{5.64(176)e-5}{\per\square\meter} \\
+  b &= \SI{6.2320(417)e-2}{\meter} \\
+\end{align*}
+und das Flächenträgheitsmoment lautet
+\begin{equation*}
+  I = 9.818* 10^{-10} m^4.
+\end{equation*}
+\newline
+Wodurch sich für den Elastizitätsmodul
+\begin{equation*}
+  E = \SI{150571.10(4695784)}{\newton\per\square\meter}
+\end{equation*}
+ergibt.
 
 \subsection{Runder Stab, beidseitige Einspannung}
 \begin{figure}
