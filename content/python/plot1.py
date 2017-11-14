@@ -20,7 +20,7 @@ m_e = m_e* 10**(-3)
 x_ap= L*a**2 - a**3/3 #m
 y_ap= d               #m
 
-def f(x, b, y):
+def f(x, y, b):
     return x*b+y
 
 parameters, pcov = curve_fit(f, x_ap, y_ap)
@@ -48,6 +48,6 @@ fehl = np.sqrt(np.diag(pcov))
 m = ufloat(parameters[0], fehl[0])
 print(m)
 print(F)
-E_1= F*m/(2*I)
+E_1= F/((2*I)*m)
 print("Elastizitaetsmodul1", E_1)
 print("-------------------------------")
