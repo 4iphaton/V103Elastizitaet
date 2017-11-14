@@ -15,12 +15,12 @@ L= 49.3*10**(-2) #m
 l_e = l_e* 10**(-2)
 b_e = b_e* 10**(-2)
 h_e = h_e* 10**(-2)
-m_e = m_e* 10**(-3)
+m_e = 1193.2* 10**(-3)
 
 x_ap= L*a**2 - a**3/3 #m
 y_ap= d               #m
 
-def f(x, y, b):
+def f(x, b, y):
     return x*b+y
 
 parameters, pcov = curve_fit(f, x_ap, y_ap)
