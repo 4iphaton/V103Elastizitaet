@@ -50,4 +50,4 @@ print("Traegheitsmoment2:", I)
 EM = F/(2*I*m)
 
 print("Elastizitätmodul3: {0:.2f}".format(EM), "N/m^2")
-print("---------------------------------")
+print("----------------------------------")
