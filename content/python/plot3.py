@@ -17,13 +17,12 @@ L=0.565
 E=3*(L**2)*a-4*(a**3)
 print(a[0],a[len(a)-1])
 print(E[0],E[len(E)-1])
-def f(x, b, y):
-    return x*b+y
+def f(x, b):
+    return x*b
 
 parameters, pcov = curve_fit(f, E, d)
 errors = np.sqrt(np.diag(pcov))
 print("a3:", parameters[0], errors[0])
-print("b3:", parameters[1], errors[1])
 m = ufloat(parameters[0], errors[0])
 print('Steigung m = {0:.8f}'.format(m),'1/(m^2)')
 t= np.linspace(E[0],E[len(E)-1],5000)
@@ -40,7 +39,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 
 plt.savefig('build/plot3.pdf')
-I = const.pi * (0.005**4) / 2
+I = const.pi * (0.005**4) / 4
 print("Traegheitsmoment 3:", I)
 EM = F/(48*I*m)
 

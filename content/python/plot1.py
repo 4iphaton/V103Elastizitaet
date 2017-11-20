@@ -20,8 +20,8 @@ m_e = 1193.2* 10**(-3)
 x_ap= L*a**2 - a**3/3 #m
 y_ap= d               #m
 
-def f(x, b, y):
-    return x*b+y
+def f(x, b):
+    return x*b
 
 parameters, pcov = curve_fit(f, x_ap, y_ap)
 print("a1", parameters)
@@ -40,7 +40,7 @@ plt.tight_layout()
 plt.savefig('build/plot1.pdf')
 #eckig
 
-I= ((b_e*h_e)/12)*(b_e**2 + h_e**2)
+I= ((b_e**4)/12)
 print("Traegheitsmoment1:",I)
 g= 9.81
 F = m_e*g

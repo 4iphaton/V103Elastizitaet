@@ -42,31 +42,28 @@ keine Spannung Auftritt, die sogenannte neutrale Faser. Überhalb dieser
 bildet sich eine Zugspannung (Streckung des Materials), untehalb eine Druckspannung
 (Stauchung des Materials), welche zusammen durch Intergration über Q ein inneres Drehmoment $M_\sigma$ bilden.
 Dieses muss mit dem äußeren Drehmoment $M_\symup{F}$ ins Gleichgewicht kommen.
-\begin{align}
-  M_\sigma &= \int_\symup{Q} y \sigma(y) \symup{d} \, q\\
-  M_\symup{F} &= F(L-x)\\
-  F(L-x) &= \int_\symup{Q} y \sigma(y) \symup{d} \, q
-  \label{eqn:dreh}
-\end{align}
+\begin{equation}
+  \begin{split}
+    \label{eqn:dreh}
+    M_\sigma &= \int_\symup{Q} y \sigma(y) \symup{d} \, q\\
+    =M_\symup{F} &= F(L-x)
+  \end{split}
+\end{equation}
 Durch die infnitesimale Betrachtung von \eqref{eqn:hook} und \eqref{eqn:dreh} ergibt
 sich für die Durchbiegung $D(x)$ des einseitig eingespannten Stabes:
 \begin{align}
   D(x) &= \frac{F}{2E\symbf{I}}\left(Lx^2-\frac{x^3}{3}\right)\\
-  \intertext{mit dem Flächenträgheitsmoment $\symbf{I}$}
-\symbf{I} &\coloneq \int_\symup{Q} y^2 \symup{d}\, q(y) \\
 \end{align}
 Für den Kreis des Radius $R$ ergibt sich für das Flächenträgheitsmoment:
-\begin{align}
-  I_\symup{x}&=I_\symup{y}=\frac{\pi}{4}R^4\\
-  I_\text{kreis}&=I_\symup{x}+I_\symup{y}=\frac{\pi}{2}R^4
+\begin{equation}
+  \symbf{I}=I_\symup{x}=I_\symup{y}=\frac{\pi}{4}R^4
   \label{eqn:Ikreis}
-\end{align}
+\end{equation}
 Für das Quadrat der Seitenlänge $a$ ergibt sich für das Flächenträgheitsmoment:
-\begin{align}
-  I_\symup{x}&=I_\symup{y}=\frac{a^4}{12}\\
-  I_\text{quadrat}&=I_\symup{x}+I_\symup{y}=\frac{a^4}{6}
+\begin{equation}
+  \symbf{I}=I_\symup{x}=I_\symup{y}=\frac{a^4}{12}
   \label{eqn:Iquadrat}
-\end{align}
+\end{equation}
 \begin{align}
 \iff E &= \frac{F}{2\symbf{I}D(x)}\left(Lx^2-\frac{x^3}{3}\right)
 \label{eqn:einseitig}
@@ -76,8 +73,8 @@ Für den beidseitig eingespannten Stab ergibt sich
   M_\symup{F} &= -\frac{F}{2}x & 0 \leq &x \leq \frac{L}{2}\\
   M_\symup{F} &= -\frac{F}{2}\left(L-x\right) & \frac{L}{2} \leq &x \leq L\\
 \end{align}
-Zieht man erneut \eqref{eqn:hook} in seiner infinitesimalen Form zur Hilfe
-ergibt sich:
+Unter erneuter Nutzung von \eqref{eqn:hook} in seiner infinitesimalen Form
+ergibt sich für den beidseitig eingespannten Stab:
 
 \begin{align}
   E &= \frac{F}{48\symbf{I}D(x)}\left(3L^2x-4x^3\right)& 0 \leq &x \leq \frac{L}{2}

@@ -20,14 +20,13 @@ E=L*a**2-a**3/3
 print(a[0],a[len(a)-1])
 print(E[0],E[len(E)-1])
 
-def f(x, b, y):
-    return x*b+y
+def f(x, b):
+    return x*b
    # return x*b**2-b**3*y
 
 parameters, pcov = curve_fit(f, E, d)
 errors = np.sqrt(np.diag(pcov))
 print( "a2:", parameters[0], errors[0])
-print( "b2:", parameters[1], errors[1])
 m = ufloat(parameters[0], errors[0])
 print('Steigung m = {0:.8f}'.format(m),'1/(m^2)')
 
@@ -46,7 +45,7 @@ plt.tight_layout()
 
 plt.savefig('build/plot2.pdf')
 
-I = const.pi * (0.005**4) / 2
+I = const.pi * (0.005**4) / 4
 print("Traegheitsmoment2:", I)
 EM = F/(2*I*m)
 

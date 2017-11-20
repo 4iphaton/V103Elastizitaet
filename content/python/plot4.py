@@ -17,8 +17,8 @@ L=0.565
 E=4*a**3-12*L*a**2+9*L**2*a-L**3
 print(a[0],a[len(a)-1])
 print(E[0],E[len(E)-1])
-def f(x, b, y):
-    return x*b+y
+def f(x, b):
+    return x*b
 
 parameters, pcov = curve_fit(f, E, d)
 errors = np.sqrt(np.diag(pcov))
@@ -39,7 +39,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 
 plt.savefig('build/plot4.pdf')
-I = const.pi * (0.005**4) / 2
+I = const.pi * (0.005**4) / 4
 print(I)
 EM = F/(48*I*m)
 
