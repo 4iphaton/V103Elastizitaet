@@ -54,6 +54,20 @@ sich für die Durchbiegung $D(x)$ des einseitig eingespannten Stabes:
   D(x) &= \frac{F}{2E\symbf{I}}\left(Lx^2-\frac{x^3}{3}\right)\\
   \intertext{mit dem Flächenträgheitsmoment $\symbf{I}$}
 \symbf{I} &\coloneq \int_\symup{Q} y^2 \symup{d}\, q(y) \\
+\end{align}
+Für den Kreis des Radius $R$ ergibt sich für das Flächenträgheitsmoment:
+\begin{align}
+  I_\symup{x}&=I_\symup{y}=\frac{\pi}{4}R^4\\
+  I_\text{kreis}&=I_\symup{x}+I_\symup{y}=\frac{\pi}{2}R^4
+  \label{eqn:Ikreis}
+\end{align}
+Für das Quadrat der Seitenlänge $a$ ergibt sich für das Flächenträgheitsmoment:
+\begin{align}
+  I_\symup{x}&=I_\symup{y}=\frac{a^4}{12}\\
+  I_\text{quadrat}&=I_\symup{x}+I_\symup{y}=\frac{a^4}{6}
+  \label{eqn:Iquadrat}
+\end{align}
+\begin{align}
 \iff E &= \frac{F}{2\symbf{I}D(x)}\left(Lx^2-\frac{x^3}{3}\right)
 \label{eqn:einseitig}
 \end{align}
@@ -66,9 +80,6 @@ Zieht man erneut \eqref{eqn:hook} in seiner infinitesimalen Form zur Hilfe
 ergibt sich:
 
 \begin{align}
-  D(x) &= \frac{F}{48E\symbf{I}}\left(3L^2x-4x^3\right)& 0 \leq &x \leq \frac{L}{2}\\
-  D(x) &= \frac{F}{48E\symbf{I}}\left(4x^3-12Lx^2+9L^2x-L^3\right) & \frac{L}{2} \leq &x \leq L\\
-  \intertext{forme um wie in \eqref{eqn:einseitig}}
   E &= \frac{F}{48\symbf{I}D(x)}\left(3L^2x-4x^3\right)& 0 \leq &x \leq \frac{L}{2}
   \label{eqn:beidseitigl}\\
   E &= \frac{F}{48\symbf{I}D(x)}\left(4x^3-12Lx^2+9L^2x-L^3\right) & \frac{L}{2} \leq &x \leq L
