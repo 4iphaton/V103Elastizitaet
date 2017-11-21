@@ -32,7 +32,7 @@ plt.plot(t, f(t, *parameters), 'g-', label='Fit')
 #plt.plot(E, c, 'bx', label='mit Gewicht')
 plt.plot(E, d, 'gx', label='$ D(x) $')
 #plt.errorbar(i, v ,xerr=2*e_i ,yerr=2*e_v, fmt='rx', label='U gegen I')
-plt.xlabel(r'$ 3L^2x - 4x^3$ / $\text{m}^3$')
+plt.xlabel(r'$ 4x^3 - 12Lx^2+9L^2x-L**3$ / $\text{m}^3$')
 plt.ylabel(r'D(x)/$ m$')
 plt.legend(loc='best')
 
